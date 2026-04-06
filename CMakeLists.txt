@@ -15,10 +15,10 @@ add_executable(Lorenz3D main.cpp)
 
 target_link_libraries(Lorenz3D SDL3)
 
-# Force executable output location
+# This works on ANY computer, regardless of the username or folder path
 set_target_properties(Lorenz3D PROPERTIES
-    RUNTIME_OUTPUT_DIRECTORY_DEBUG "C:/Users/Rich Coast/Documents/C++/3DMath/build/Debug"
-    RUNTIME_OUTPUT_DIRECTORY_RELEASE "C:/Users/Rich Coast/Documents/C++/3DMath/build/Release"
+    RUNTIME_OUTPUT_DIRECTORY_DEBUG   "${CMAKE_BINARY_DIR}/bin/Debug"
+    RUNTIME_OUTPUT_DIRECTORY_RELEASE "${CMAKE_BINARY_DIR}/bin/Release"
 )
 
 # Copy SDL3.dll to the same folder as the executable
